@@ -1,3 +1,4 @@
+import gsap from "gsap";
 import * as THREE from "three";
 
 // Canvas
@@ -35,10 +36,13 @@ const renderer = new THREE.WebGLRenderer({
 renderer.setSize(sizes.width, sizes.height);
 
 // Clock
-const clock = new THREE.Clock();
+// const clock = new THREE.Clock();
 
 // Time
 // let time = Date.now();
+
+gsap.to(cube.position, { duration: 1, delay: 1, x: 2 });
+gsap.to(cube.position, { duration: 1, delay: 2, x: 0 });
 
 // Animations
 function tick() {
@@ -48,12 +52,12 @@ function tick() {
 	// time = currentTime;
 
 	// Clock
-	const elapsedTime = clock.getElapsedTime();
+	// const elapsedTime = clock.getElapsedTime();
 
 	// Update objects
-	camera.position.y = Math.sin(elapsedTime);
-	camera.position.x = Math.cos(elapsedTime);
-	camera.lookAt(cube.position);
+	// camera.position.y = Math.sin(elapsedTime);
+	// camera.position.x = Math.cos(elapsedTime);
+	// camera.lookAt(cube.position);
 	// cube.rotation.y = elapsedTime * Math.PI * 2;
 	// cube.position.y = Math.sin(elapsedTime);
 	// cube.position.x = Math.cos(elapsedTime);
